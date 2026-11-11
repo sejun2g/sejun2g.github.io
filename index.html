@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="게임 기획자 오세준의 포트폴리오. 나르미의 나라장터, 건물부수기, CLACKTRACK.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>오세준 게임 기획 포트폴리오</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* 레이아웃: 왼쪽 정렬 단일 컬럼. 게임 하나가 한 챕터이고, 챕터는 머리글(제목, 영상, 사실) → 스크린샷 선반 순서.
+   설계 의도는 챕터 끝의 접힌 영역에 "무엇을 이렇게 했다 + 왜"로 적는다. 색은 게임마다 하나씩만 쓴다. */
+:root {
+  --paper: #F4F6F8;
+  --surface: #FFFFFF;
+  --ink: #12161C;
+  --ink-2: #4B5563;
+  --ink-3: #6F7A89;
+  --line: #D8DDE4;
+  --narumi: #22756C;
+  --bb: #B4530A;
+  --ct: #2B5BD1;
+  --narumi-wash: #E4F0EE;
+  --bb-wash: #FBEEDD;
+  --ct-wash: #E5ECFB;
+  --display: "Black Han Sans", "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --wrap: 1080px;
+  --text: 41rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F1216; --surface: #171B21; --ink: #E8ECF1; --ink-2: #A7B0BD; --ink-3: #8891A0; --line: #2A313B;
+    --narumi: #5CC4B6; --bb: #F0A24A; --ct: #86A8FF;
+    --narumi-wash: #14272A; --bb-wash: #2A1F12; --ct-wash: #151F38;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F1216; --surface: #171B21; --ink: #E8ECF1; --ink-2: #A7B0BD; --ink-3: #8891A0; --line: #2A313B;
+  --narumi: #5CC4B6; --bb: #F0A24A; --ct: #86A8FF;
+  --narumi-wash: #14272A; --bb-wash: #2A1F12; --ct-wash: #151F38;
+  color-scheme: dark;
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--paper);
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3, h4, p, dl, dd, figure, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+
+.inner {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+/* 상단 내비게이션 */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.top .inner { display: flex; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding-block: 10px; }
+.brand { font-family: var(--display); font-size: 1.15rem; text-decoration: none; letter-spacing: 0.01em; }
+.top nav { display: flex; gap: 4px 18px; flex-wrap: wrap; margin-left: auto; font-size: 0.9rem; }
+.top nav a { text-decoration: none; color: var(--ink-2); padding-block: 4px; }
+.top nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+/* 첫 화면 */
+.hero .inner { padding-block: 60px 52px; }
+.eyebrow { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ink-3); text-transform: uppercase; }
+.hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.6rem, 7vw, 4.4rem); line-height: 1.05; margin-top: 10px; }
+.hero .thesis { font-size: clamp(1.25rem, 2.8vw, 1.75rem); font-weight: 600; line-height: 1.45; margin-top: 20px; max-width: 26em; text-wrap: balance; }
+.hero .lead { color: var(--ink-2); max-width: var(--text); margin-top: 16px; font-size: 1.04rem; }
+
+/* 게임 챕터 */
+.game { --hue: var(--ink); --wash: var(--surface); border-top: 1px solid var(--line); }
+#narumi { --hue: var(--narumi); --wash: var(--narumi-wash); }
+#building-breaker { --hue: var(--bb); --wash: var(--bb-wash); }
+#clacktrack { --hue: var(--ct); --wash: var(--ct-wash); }
+.game, #contact { scroll-margin-top: 56px; }
+
+.game-head { background: var(--wash); }
+.game-head .inner { padding-block: 40px 34px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 28px 48px; align-items: start; }
+.state-tag { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.05em; color: var(--hue); }
+.game-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.12; margin-top: 8px; }
+.game-head .pitch { font-size: 1.05rem; margin-top: 14px; max-width: 31em; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px;
+  border-radius: 999px; border: 1px solid var(--ink); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+}
+.btn.solid { background: var(--ink); color: var(--paper); }
+.btn:hover { opacity: 0.86; }
+.btn svg { width: 14px; height: 14px; flex: none; }
+.facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 16px; font-size: 0.92rem; line-height: 1.6; }
+.facts dt { color: var(--ink-3); white-space: nowrap; }
+@media (max-width: 800px) { .game-head .inner { grid-template-columns: 1fr; } }
+
+.game-body .inner { padding-block: 30px 52px; display: grid; gap: 32px; }
+.note { color: var(--ink-3); font-size: 0.9rem; max-width: var(--text); }
+
+/* 스크린샷 선반 */
+.shelf { --shot: 190px; display: flex; gap: 14px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x proximity; }
+.shelf figure { flex: 0 0 min(46vw, var(--shot)); display: grid; gap: 8px; align-content: start; scroll-snap-align: start; }
+.shelf img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
+figcaption { font-size: 0.82rem; line-height: 1.5; color: var(--ink-2); }
+figcaption b { font-family: var(--mono); font-weight: 500; color: var(--hue); margin-right: 4px; }
+
+/* 지역 발전 삽화 */
+.stages-wrap { display: grid; gap: 12px; }
+.stages { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.stages figure { display: grid; gap: 8px; }
+.stages img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
+.stages figcaption { font-weight: 600; color: var(--ink); font-size: 0.86rem; }
+.stages figcaption span { color: var(--hue); font-family: var(--mono); font-weight: 500; }
+@media (max-width: 720px) { .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* 접힌 상세 */
+details.more { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+details.more > summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-block: 15px; font-weight: 700; font-size: 1.02rem;
+}
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::after { content: "+"; font-family: var(--mono); font-size: 1.3rem; font-weight: 500; line-height: 1; }
+details.more[open] > summary::after { content: "−"; }
+.more-body { display: grid; gap: 44px; padding-block: 14px 36px; }
+.block { display: grid; gap: 16px; min-width: 0; }
+.block > h3 { font-size: 1.22rem; font-weight: 700; }
+.block > p { max-width: var(--text); }
+
+/* 주제 → 게임 표현 */
+.map { display: grid; max-width: 52rem; border-top: 1px solid var(--line); }
+.map > div { display: grid; grid-template-columns: minmax(0, 11rem) 1.2rem minmax(0, 1fr); gap: 10px; padding-block: 11px; border-bottom: 1px solid var(--line); align-items: baseline; }
+.map dt { font-weight: 600; }
+.map .arrow { color: var(--hue); font-family: var(--mono); }
+.map dd { color: var(--ink-2); }
+.map .cut dd { color: var(--ink-3); }
+@media (max-width: 560px) { .map > div { grid-template-columns: 1fr; gap: 2px; } .map .arrow { display: none; } }
+
+/* 설계 항목: 굵은 줄이 설계, 아래 줄이 이유 */
+.points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 44px; }
+.points li { display: grid; gap: 4px; align-content: start; min-width: 0; padding-top: 14px; border-top: 1px solid var(--line); }
+.points strong { font-weight: 700; }
+.points span { color: var(--ink-2); font-size: 0.96rem; }
+@media (max-width: 720px) { .points { grid-template-columns: 1fr; } }
+
+/* 구간 표 */
+.segments { display: grid; border-top: 1px solid var(--line); max-width: 52rem; font-size: 0.94rem; }
+.segments > div { display: grid; grid-template-columns: 5.5rem minmax(0, 9rem) minmax(0, 1fr); gap: 14px; padding-block: 11px; border-bottom: 1px solid var(--line); align-items: baseline; }
+.segments .num { font-family: var(--mono); color: var(--hue); font-variant-numeric: tabular-nums; }
+.segments .learn { font-weight: 600; }
+.segments .memo { color: var(--ink-2); }
+@media (max-width: 560px) { .segments > div { grid-template-columns: 5rem minmax(0, 1fr); } .segments .memo { grid-column: 2; } }
+
+/* 연락처 */
+#contact { border-top: 1px solid var(--line); background: var(--surface); }
+#contact .inner { padding-block: 44px 72px; display: grid; gap: 18px; }
+.sec-title { font-family: var(--display); font-weight: 400; font-size: clamp(1.8rem, 4.4vw, 2.6rem); }
+.contact-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.mail { font-family: var(--mono); font-size: 1.05rem; user-select: all; }
+.copy { font: inherit; font-size: 0.85rem; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; }
+.copy:hover { border-color: var(--ink-3); }
+.links { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 0.95rem; }
+.links a { text-underline-offset: 4px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="inner">
+    <a class="brand" href="#top">오세준</a>
+    <nav aria-label="페이지 내 이동">
+      <a href="#narumi">나르미의 나라장터</a>
+      <a href="#building-breaker">건물부수기</a>
+      <a href="#clacktrack">CLACKTRACK</a>
+      <a href="#contact">연락처</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="inner">
+      <p class="eyebrow">Game Designer</p>
+      <h1>오세준</h1>
+      <p class="thesis">다른 세상을 여행하는 경험을 주는 게임 디자이너가 되고 싶습니다.</p>
+      
+      
+    </div>
+  </section>
+
+  <!-- ───────────── 나르미의 나라장터 ───────────── -->
+  <article class="game" id="narumi">
+    <div class="game-head">
+      <div class="inner">
+        <div>
+          <p class="state-tag">조달청 공모전 제출작</p>
+          <h2>나르미의 나라장터: 공공조달 경영기</h2>
+          <p class="pitch">공공조달을 "납품하면 지역이 나아진다"는 경험으로 풀어낸 캐주얼 경영 게임입니다. 발주를 받아 분류와 포장 미니게임으로 물품을 처리하고, 납품할수록 병원과 학교, 연구소, 소방서가 발전합니다.</p>
+          <div class="actions">
+            <a class="btn solid" href="https://youtu.be/OYT1dGzDggo" target="_blank" rel="noopener">
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>플레이 영상
+            </a>
+          </div>
+        </div>
+        <dl class="facts">
+          <dt>장르</dt><dd>캐주얼 경영 + 분류 액션 + 포장 퍼즐</dd>
+          <dt>플랫폼</dt><dd>Windows, Web (세로 화면)</dd>
+          <dt>기간</dt><dd>2026.10</dd>
+          <dt>역할</dt><dd>1인 제작. 기획, 시스템과 밸런스 설계, 화면과 삽화의 방향 결정</dd>
+          <dt>도구</dt><dd>Unity, Codex, ChatGPT</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="game-body">
+      <div class="inner">
+        <div class="shelf" role="group" aria-label="나르미의 나라장터 화면" tabindex="0">
+          <figure><img src="img/narumi-office.webp" width="540" height="864" alt="직원들이 책상에 앉아 있는 도트 그래픽 사무실" loading="lazy"><figcaption>사무실. 직원은 자리에서 일하다가 가구를 이용하러 움직입니다.</figcaption></figure>
+          <figure><img src="img/narumi-orders.webp" width="540" height="864" alt="병원, 학교, 연구소, 소방서 발주 목록" loading="lazy"><figcaption>나라장터 메뉴. 네 지역의 발주와 진척도를 봅니다.</figcaption></figure>
+          <figure><img src="img/narumi-staff.webp" width="540" height="864" alt="직원 고용 목록과 능력 수치" loading="lazy"><figcaption>직원 고용. 직원마다 능력이 다르고 레벨에 따라 커집니다.</figcaption></figure>
+          <figure><img src="img/narumi-sort.webp" width="540" height="864" alt="컨베이어 위의 상자를 좌우로 분류하는 화면" loading="lazy"><figcaption>분류. 좌우로 나누고, 불량품은 누르지 않고 보냅니다.</figcaption></figure>
+          <figure><img src="img/narumi-pack.webp" width="540" height="864" alt="네 개의 레일에 색 블록이 쌓인 화면" loading="lazy"><figcaption>포장. 같은 색을 세로로 3개 이상 잇습니다.</figcaption></figure>
+        </div>
+
+        <div class="stages-wrap">
+          <div class="stages">
+            <figure><img src="img/fire-1.webp" width="640" height="360" alt="소방차 한 대와 대원 한 명이 있는 소방서" loading="lazy"><figcaption>기본 시설</figcaption></figure>
+            <figure><img src="img/fire-2.webp" width="640" height="360" alt="오른쪽에 방화복 보관함이 생기고 대원이 방화복을 입는 소방서" loading="lazy"><figcaption><span>+</span> 방화복 보관함</figcaption></figure>
+            <figure><img src="img/fire-3.webp" width="640" height="360" alt="뒤편에서 사다리 훈련을 하는 대원들이 추가된 소방서" loading="lazy"><figcaption><span>+</span> 구조 사다리</figcaption></figure>
+            <figure><img src="img/fire-4.webp" width="640" height="360" alt="투척형 소화기를 점검하는 대원들이 추가된 소방서" loading="lazy"><figcaption><span>+</span> 투척형 소화기</figcaption></figure>
+          </div>
+          <p class="note">소방서의 발전 삽화. 같은 구도 위에 납품한 물품과 사람들의 활동이 한 단계씩 쌓입니다.</p>
+        </div>
+
+        <details class="more">
+          <summary>설계 의도 자세히 보기</summary>
+          <div class="more-body">
+            <section class="block">
+              <h3>주제를 게임으로 옮긴 방식</h3>
+              <p>실제 조달 절차는 계약과 심사가 중심이고, 이를 그대로 옮기면 교육용 시뮬레이터가 됩니다. 그래서 절차를 재현하는 대신 조달의 결과, 즉 필요한 물품이 공공시설에 도착해 그곳이 나아지는 모습을 플레이의 보상으로 삼았습니다.</p>
+              <dl class="map">
+                <div><dt>발주와 납품</dt><span class="arrow" aria-hidden="true">→</span><dd>발주, 입고, 분류, 포장, 납품이 이어지는 반복 루프</dd></div>
+                <div><dt>정확한 공급과 검수</dt><span class="arrow" aria-hidden="true">→</span><dd>불량품을 걸러내는 분류 미니게임</dd></div>
+                <div><dt>공공기관의 수요 충족</dt><span class="arrow" aria-hidden="true">→</span><dd>병원, 학교, 연구소, 소방서가 납품량에 따라 발전하는 삽화 16장</dd></div>
+                <div><dt>혁신제품</dt><span class="arrow" aria-hidden="true">→</span><dd>지역마다 낮은 확률로 나오는 특수 발주와 전시품 12종 수집</dd></div>
+                <div class="cut"><dt>계약 심사, 업체 선정</dt><span class="arrow" aria-hidden="true">→</span><dd>넣지 않음</dd></div>
+              </dl>
+            </section>
+
+            <section class="block">
+              <h3>설계와 이유</h3>
+              <ul class="points">
+                <li><strong>삽화는 기본 시설 위에 물품이 쌓입니다</strong><span>첫 장면부터 병원과 학교로 보여야 하고, 납품의 결과가 숫자가 아니라 장면의 변화로 읽혀야 하기 때문입니다.</span></li>
+                <li><strong>포장은 4열에서 같은 색을 세로로 3개 잇습니다</strong><span>무작위로 나오는 블록에 결과가 크게 좌우되지 않아야 합니다. 이 게임의 대상은 숙련자가 아니라 가볍게 해보는 사람입니다.</span></li>
+                <li><strong>미니게임 한 판은 1분 안팎입니다</strong><span>분류 물량은 단계가 올라도 조금씩만 늘고, 포장은 60초로 고정했습니다. 후반으로 갈수록 한 판이 길어져 지루해지는 것을 막습니다.</span></li>
+                <li><strong>배송 시간이 제약입니다</strong><span>경영 게임에는 플레이어를 제한하는 요소가 필요합니다. 배송 시간을 그 제약으로 두고, 직원과 차량의 성장이 이 시간을 줄이게 했습니다.</span></li>
+                <li><strong>재화 세 가지의 역할을 나눴습니다</strong><span>지역 진척도는 납품량으로 오르고, 평판은 쓰지 않고 쌓여 지역과 사무실을 열고, 운영 포인트는 구매에 씁니다. 포인트를 써도 진행이 뒤로 가지 않습니다.</span></li>
+                <li><strong>두 미니게임이 서로를 지우지 않습니다</strong><span>분류에서 성공한 수량이 납품 수량이 되고, 포장은 통과 여부만 정합니다. 한쪽의 실패가 다른 쪽의 성과를 없애지 않게 했습니다.</span></li>
+                <li><strong>납품 보상은 자동으로, 지역 완료 보상만 직접 받습니다</strong><span>반복되는 조작은 줄이고, 큰 성장 시점만 플레이어가 직접 확인하게 했습니다.</span></li>
+                <li><strong>기본은 쉽게, 고난도는 선택으로</strong><span>누구나 할 수 있도록 기본 난이도를 가볍게 잡았습니다. 더 어려운 것을 원하는 사람은 속도와 개수가 늘어나는 고난도를 켜고 보상을 더 받습니다.</span></li>
+              </ul>
+            </section>
+          </div>
+        </details>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───────────── 건물부수기 ───────────── -->
+  <article class="game" id="building-breaker">
+    <div class="game-head">
+      <div class="inner">
+        <div>
+          <p class="state-tag">Google Play 출시</p>
+          <h2>건물부수기</h2>
+          <p class="pitch">내려오는 건물을 부수며 위로 올라가는 모바일 액션 게임입니다. 짧은 조작으로 파괴의 쾌감을 주면서, 다음 층을 보고 공격을 고르게 만드는 것이 목표였습니다. 무기 세 계열과 재질 네 가지, 10개 지역 30개 스테이지로 구성했습니다.</p>
+          <div class="actions">
+            <a class="btn solid" href="https://youtu.be/b-msIKK6qXs" target="_blank" rel="noopener">
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>플레이 영상
+            </a>
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.wazak.buildingbreaker" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+        <dl class="facts">
+          <dt>장르</dt><dd>모바일 액션 + 성장</dd>
+          <dt>플랫폼</dt><dd>Android (스토어 이름 Building Breaker)</dd>
+          <dt>기간</dt><dd>2026.09 ~ 10</dd>
+          <dt>역할</dt><dd>1인 제작. 기획, 전투와 스테이지 설계, 연출 방향 결정, 출시</dd>
+          <dt>도구</dt><dd>Unity, Codex, ChatGPT</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="game-body">
+      <div class="inner">
+        <div class="shelf" role="group" aria-label="건물부수기 화면" tabindex="0">
+          <figure><img src="img/bb-3-1.webp" width="540" height="960" alt="검을 든 캐릭터 주변으로 건물 파편이 튀는 장면" loading="lazy"><figcaption><b>3-1</b>층을 부수면 파편이 튀고 캐릭터가 올라갑니다.</figcaption></figure>
+          <figure><img src="img/bb-5-2.webp" width="540" height="960" alt="목재, 석재, 유리 층이 섞인 건물이 내려오는 장면" loading="lazy"><figcaption><b>5-2</b>한 건물에 재질이 다른 층이 섞여 내려옵니다.</figcaption></figure>
+          <figure><img src="img/bb-6-3.webp" width="540" height="960" alt="해머로 탑 모양 건물을 치는 장면" loading="lazy"><figcaption><b>6-3</b>지역의 마지막 판은 랜드마크입니다.</figcaption></figure>
+          <figure><img src="img/bb-9-2-sword.webp" width="540" height="960" alt="붉은 참격이 화면을 가로지르는 검 스킬 장면" loading="lazy"><figcaption><b>9-2</b>검 스킬. 아래 세 층을 한 번에 부숩니다.</figcaption></figure>
+          <figure><img src="img/bb-9-2-dagger.webp" width="540" height="960" alt="푸른 빛줄기가 부채꼴로 퍼지는 단검 스킬 장면" loading="lazy"><figcaption><b>9-2</b>단검 스킬. 무기마다 색과 동선이 다릅니다.</figcaption></figure>
+        </div>
+
+        <details class="more">
+          <summary>설계 의도 자세히 보기</summary>
+          <div class="more-body">
+            <section class="block">
+              <h3>설계와 이유</h3>
+              <ul class="points">
+                <li><strong>층을 부술 때마다 캐릭터가 올라갑니다</strong><span>타격 이펙트만으로는 화면이 정적입니다. 공격이 성공하면 캐릭터가 나아가는 변화가 보여야 한다고 봤습니다. 성공은 상승이고, 방어를 세 번 하면 추락합니다.</span></li>
+                <li><strong>입력은 탭과 홀드 두 가지입니다</strong><span>입력 종류를 구분하느라 반응이 늦어지면 답답합니다. 선택지를 줄여 누르는 즉시 공격이 나가게 했습니다.</span></li>
+                <li><strong>타이밍 판정을 두지 않았습니다</strong><span>박자에 맞춰 휘두르게 하면 리듬 게임이 되고, 액션 게임의 타격감이 줄어듭니다. 대신 무기마다 최소 공격 간격을 두어 마구 누르는 것으로 속도를 넘길 수 없게 했습니다.</span></li>
+                <li><strong>홀드 층은 70% 속도로 내려옵니다</strong><span>충전할 시간이 있어야 "다음 층을 보고 판단한다"는 플레이가 성립합니다. 일반 층의 속도는 그대로 둡니다.</span></li>
+                <li><strong>무기 세 계열의 역할이 다릅니다</strong><span>검은 기준, 해머는 느리지만 크게 밀어내고, 단검은 사거리가 길고 빠릅니다. 색과 연출도 계열마다 나눠 화면만 봐도 구분되게 했습니다.</span></li>
+                <li><strong>재질 네 가지가 리듬을 만듭니다</strong><span>석재와 목재가 기본이고, 유리는 1~2타에 깨지는 쾌감용, 금속은 덜 밀려나는 저항용입니다. 같은 조작에 강약이 생깁니다.</span></li>
+                <li><strong>난이도의 기준은 타수입니다</strong><span>체력을 계속 올리는 대신 추천 무기로 일반 층 2~3타, 보스 층 4~6타가 나오도록 잡고, 낙하 속도와 재질 조합으로 압박을 더했습니다.</span></li>
+                <li><strong>1지역에서는 3티어 검을 빌려줍니다</strong><span>스킬과 화려한 연출은 성장한 뒤에야 보입니다. 초반 세 판 동안 완성된 재미를 먼저 체험하게 하고, 2지역부터 본래 장비로 돌아갑니다.</span></li>
+              </ul>
+            </section>
+          </div>
+        </details>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───────────── CLACKTRACK ───────────── -->
+  <article class="game" id="clacktrack">
+    <div class="game-head">
+      <div class="inner">
+        <div>
+          <p class="state-tag">Google Play 출시</p>
+          <h2>CLACKTRACK</h2>
+          <p class="pitch">레일을 이어 열차를 목적지까지 보내는 세로형 3D 퍼즐입니다. 레고를 조립하는 감각과 열차가 도착했을 때의 해결감을, 한 손으로 가볍게 즐기게 하는 것이 목표였습니다. 경유지, 레버, 포탈을 차례로 배우는 45개 스테이지로 구성했습니다.</p>
+          <div class="actions">
+            <a class="btn solid" href="https://youtu.be/Y7GMi7BzVgQ" target="_blank" rel="noopener">
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>플레이 영상
+            </a>
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.WAZAK.TrainPuzzle" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+        <dl class="facts">
+          <dt>장르</dt><dd>스테이지형 3D 퍼즐</dd>
+          <dt>플랫폼</dt><dd>Android</dd>
+          <dt>기간</dt><dd>2026.07 ~ 09</dd>
+          <dt>역할</dt><dd>1인 제작. 기획, 레벨 디자인, 화면과 연출 방향 결정, 출시</dd>
+          <dt>도구</dt><dd>Unity, Codex, ChatGPT</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="game-body">
+      <div class="inner">
+        <div class="shelf" style="--shot: 164px" role="group" aria-label="CLACKTRACK 스테이지 화면" tabindex="0">
+          <figure><img src="img/ct-10.webp" width="540" height="960" alt="벚나무 사이로 레일이 놓인 10번 스테이지" loading="lazy"><figcaption><b>10</b>경유지 구간</figcaption></figure>
+          <figure><img src="img/ct-20.webp" width="540" height="960" alt="나무 블록 장애물이 놓인 20번 스테이지" loading="lazy"><figcaption><b>20</b>경유지와 장애물</figcaption></figure>
+          <figure><img src="img/ct-23.webp" width="540" height="960" alt="레버 블록이 있는 23번 스테이지" loading="lazy"><figcaption><b>23</b>레버 구간</figcaption></figure>
+          <figure><img src="img/ct-35.webp" width="540" height="960" alt="레버 두 개가 있는 35번 스테이지" loading="lazy"><figcaption><b>35</b>레버 두 개</figcaption></figure>
+          <figure><img src="img/ct-41.webp" width="540" height="960" alt="주황색 포탈과 보라색 포탈이 있는 41번 스테이지" loading="lazy"><figcaption><b>41</b>포탈 첫 등장</figcaption></figure>
+          <figure><img src="img/ct-45.webp" width="540" height="960" alt="포탈과 레버가 함께 있는 45번 스테이지" loading="lazy"><figcaption><b>45</b>포탈과 레버</figcaption></figure>
+        </div>
+
+        <details class="more">
+          <summary>설계 의도 자세히 보기</summary>
+          <div class="more-body">
+            <section class="block">
+              <h3>설계와 이유</h3>
+              <ul class="points">
+                <li><strong>블록은 항상 같은 세 가지입니다</strong><span>직선, 좌회전, 우회전만 씁니다. 블록이 무작위로 주어지면 같은 스테이지도 운에 따라 난이도가 달라지고, 통제할 수 없는 이유로 실패하면 어렵다고 느끼지 않고 불쾌하다고 느낍니다.</span></li>
+                <li><strong>버튼 한 번에 한 칸이 놓입니다</strong><span>한 손으로 가볍게 하는 게임이어서, 끌어다 놓는 동작 없이 필요한 동작을 최소로 줄였습니다.</span></li>
+                <li><strong>별은 다른 길을 생각하게 하는 장치입니다</strong><span>별을 지나지 않고 도착해도 클리어입니다. 목표는 주되 길은 하나로 강제하지 않습니다.</span></li>
+                <li><strong>쓴 블록 수를 권장 블록 수와 비교합니다</strong><span>도착했는지뿐 아니라 어떻게 도착했는지를 돌아보게 합니다.</span></li>
+                <li><strong>새 장치의 첫 스테이지는 그 장치만 씁니다</strong><span>한 번에 하나만 배우게 하고, 익숙해진 뒤에 앞에서 배운 것과 섞습니다.</span></li>
+                <li><strong>포탈은 한 쌍, 한 방향입니다</strong><span>레일을 하나씩 놓고 열차가 한 방향으로 가는 게임이어서, 플레이어가 놓는 입구와 맵에 고정된 출구로 나눴습니다. 여러 쌍은 색 구분과 규칙이 늘어 이 규모에는 과합니다.</span></li>
+                <li><strong>포탈 연출은 통과하는 순간에만 나옵니다</strong><span>계속 떠 있는 효과는 작은 화면에서 거의 보이지 않습니다. 사건이 일어나는 순간에 피드백을 모았습니다.</span></li>
+                <li><strong>스테이지는 전용 에디터로 만듭니다</strong><span>스테이지를 빠르게 만들고 고칠 수 있어야 난이도 순서를 여러 번 다듬을 수 있습니다. 그리드 배치와 좌표 겹침 검사를 넣었습니다.</span></li>
+              </ul>
+            </section>
+
+            <section class="block">
+              <h3>스테이지 구성</h3>
+              <div class="segments">
+                <div><span class="num">1 ~ 7</span><span class="learn">직선, 좌우, S자, 장애물</span><span class="memo">7번: 도착 지점이 항상 같은 곳이 아님을 보여준다</span></div>
+                <div><span class="num">8 ~ 20</span><span class="learn">경유지</span><span class="memo">18번: 먼 경유지를 먼저 들르게 해 퍼즐 게임임을 보여준다</span></div>
+                <div><span class="num">21 ~ 40</span><span class="learn">레버와 회전 레일</span><span class="memo">24번: 스위치가 반복해서 작동한다는 것을 가르친다</span></div>
+                <div><span class="num">41 ~ 45</span><span class="learn">포탈</span><span class="memo">41번: 포탈 배치 연습</span></div>
+              </div>
+            </section>
+          </div>
+        </details>
+      </div>
+    </div>
+  </article>
+
+  <footer id="contact">
+    <div class="inner">
+      <h2 class="sec-title">연락처</h2>
+      <div class="contact-row">
+        <span class="mail" id="mail">wazakfs@gamil.com</span>
+        <button class="copy" id="copy-mail" type="button">주소 복사</button>
+      </div>
+      <div class="links">
+        <a href="https://play.google.com/store/apps/details?id=com.wazak.buildingbreaker" target="_blank" rel="noopener">건물부수기 · Google Play</a>
+        <a href="https://play.google.com/store/apps/details?id=com.WAZAK.TrainPuzzle" target="_blank" rel="noopener">CLACKTRACK · Google Play</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-mail');
+  var mail = document.getElementById('mail');
+  if (!btn || !mail) return;
+  btn.addEventListener('click', function () {
+    var text = mail.textContent.trim();
+    function done() { btn.textContent = '복사했습니다'; setTimeout(function () { btn.textContent = '주소 복사'; }, 1800); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(mail);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = '선택했습니다';
+    }
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
