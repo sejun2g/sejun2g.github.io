@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="게임 기획자 오세준의 포트폴리오. 나르미의 나라장터, 건물부수기, CLACKTRACK, 개발 중인 GasGas.">
+<meta name="description" content="게임 기획자 오세준의 포트폴리오. 나르미의 나라장터, 건물부수기, CLACKTRACK, 개발 중인 차량 약탈 액션과 GasGas.">
 <meta name="robots" content="noindex">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>오세준 게임 기획 포트폴리오</title>
@@ -26,6 +26,8 @@
   --ct-wash: #E5ECFB;
   --gas: #5E7230;
   --gas-wash: #EDF1E2;
+  --car: #9A3B2E;
+  --car-wash: #F6E8E3;
   --display: "Black Han Sans", "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
@@ -37,7 +39,7 @@
     --paper: #0F1216; --surface: #171B21; --ink: #E8ECF1; --ink-2: #A7B0BD; --ink-3: #8891A0; --line: #2A313B;
     --narumi: #5CC4B6; --bb: #F0A24A; --ct: #86A8FF;
     --narumi-wash: #14272A; --bb-wash: #2A1F12; --ct-wash: #151F38;
-    --gas: #B3C77A; --gas-wash: #1D2414;
+    --gas: #B3C77A; --gas-wash: #1D2414; --car: #E58C78; --car-wash: #2A1714;
     color-scheme: dark;
   }
 }
@@ -45,7 +47,7 @@
   --paper: #0F1216; --surface: #171B21; --ink: #E8ECF1; --ink-2: #A7B0BD; --ink-3: #8891A0; --line: #2A313B;
   --narumi: #5CC4B6; --bb: #F0A24A; --ct: #86A8FF;
   --narumi-wash: #14272A; --bb-wash: #2A1F12; --ct-wash: #151F38;
-  --gas: #B3C77A; --gas-wash: #1D2414;
+  --gas: #B3C77A; --gas-wash: #1D2414; --car: #E58C78; --car-wash: #2A1714;
   color-scheme: dark;
 }
 
@@ -103,6 +105,8 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
 #building-breaker { --hue: var(--bb); --wash: var(--bb-wash); }
 #clacktrack { --hue: var(--ct); --wash: var(--ct-wash); }
 #gasgas { --hue: var(--gas); --wash: var(--gas-wash); }
+#car-raid { --hue: var(--car); --wash: var(--car-wash); }
+.wip-head { scroll-margin-top: 56px; }
 
 /* 개발 중 구분 */
 .wip-head { border-top: 1px solid var(--line); }
@@ -205,7 +209,7 @@ details.more[open] > summary::after { content: "−"; }
       <a href="#narumi">나르미의 나라장터</a>
       <a href="#building-breaker">건물부수기</a>
       <a href="#clacktrack">CLACKTRACK</a>
-      <a href="#gasgas">개발 중</a>
+      <a href="#wip">개발 중</a>
       <a href="#contact">연락처</a>
     </nav>
   </div>
@@ -426,12 +430,63 @@ details.more[open] > summary::after { content: "−"; }
   </article>
 
   <!-- ───────────── 개발 중 ───────────── -->
-  <section class="wip-head" aria-labelledby="wip-title">
+  <section class="wip-head" id="wip" aria-labelledby="wip-title">
     <div class="inner">
       <h2 id="wip-title">개발 중</h2>
       <p>아직 완성되지 않은 작업입니다. 화면은 회색 박스와 아트 테스트 단계입니다.</p>
     </div>
   </section>
+
+  <article class="game" id="car-raid">
+    <div class="game-head">
+      <div class="inner">
+        <div>
+          <p class="state-tag">개발 중 · 이름 미정</p>
+          <h2>차량 약탈 액션</h2>
+          <p class="pitch">직접 차를 몰며 쏘고 들이받아 건물을 부수고, 쏟아진 귀중품을 쓸어 담아 본진으로 돌아오는 PC 액션 게임입니다. 많이 실을수록 차가 느려져서, 더 털지 돌아갈지가 매 순간의 판단이 됩니다. 지금은 무기, 파괴, 수집, 귀환으로 이어지는 기본 루프가 돌아가는 상태입니다.</p>
+          <div class="actions">
+            <a class="btn solid" href="https://youtu.be/hSVWc8xdaOw" target="_blank" rel="noopener">
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>개발 영상
+            </a>
+          </div>
+        </div>
+        <dl class="facts">
+          <dt>장르</dt><dd>차량 약탈 액션 + 성장</dd>
+          <dt>플랫폼</dt><dd>PC</dd>
+          <dt>기간</dt><dd>2026.10 ~ 진행 중</dd>
+          <dt>역할</dt><dd>1인 제작. 기획, 전투와 경제 설계, 화면과 연출 방향 결정</dd>
+          <dt>도구</dt><dd>Unreal Engine, Blender, Codex</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="game-body">
+      <div class="inner">
+        <div class="shelf" style="--shot: 400px" role="group" aria-label="차량 약탈 액션 개발 화면" tabindex="0">
+          <figure><img src="img/car-ram.webp" width="960" height="540" alt="톱날을 단 차량이 상점을 들이받아 동전이 쏟아지는 장면" loading="lazy"><figcaption><b>파괴</b>건물은 부순 조각만큼 돈과 귀중품을 떨어뜨립니다.</figcaption></figure>
+          <figure><img src="img/car-debris.webp" width="960" height="540" alt="무너진 건물 잔해 사이로 동전이 흩어진 서부 마을" loading="lazy"><figcaption><b>수집</b>흩어진 드롭은 달리면서 그대로 쓸어 담습니다.</figcaption></figure>
+          <figure><img src="img/car-saloon.webp" width="960" height="540" alt="서부 마을의 살룬 건물과 상단의 운반 금액, 적재량 표시" loading="lazy"><figcaption><b>적재</b>운반 중인 돈과 적재량을 보며 귀환 시점을 정합니다.</figcaption></figure>
+        </div>
+
+        <details class="more">
+          <summary>설계 의도 자세히 보기</summary>
+          <div class="more-body">
+            <section class="block">
+              <h3>설계와 이유</h3>
+              <ul class="points">
+                <li><strong>강화는 랜덤 카드가 아니라 직접 고릅니다</strong><span>무기마다 세 갈래, 갈래마다 여덟 단계를 두고 모은 자원으로 원하는 노드를 삽니다. 운에 따라 빌드가 갈리지 않고, 내가 고른 방향으로 강해진다는 통제감을 주려 했습니다.</span></li>
+                <li><strong>많이 실을수록 느려집니다</strong><span>허용 중량을 넘기면 속도, 가속, 무기 피해가 최대 30%까지 줄어듭니다. 쓸어 담는 쾌감과 귀환 판단이 부딪히게 해서, 더 털지 돌아갈지를 플레이어가 계속 고르게 했습니다.</span></li>
+                <li><strong>건물 보상은 부순 만큼 나옵니다</strong><span>크기별 고정 보상을 버리고, 미리 나눠 둔 조각을 실제로 부순 수에 비례해 지급합니다. 건물을 끝까지 무너뜨릴 이유가 생기고, 흩어지는 잔해와 보상이 함께 보입니다.</span></li>
+                <li><strong>분해 단계 없이 바로 쓸어 담습니다</strong><span>처음에는 수집물을 모아 분해하는 구조였지만, 메뉴에서 분해하는 시간이 주행의 흐름을 끊었습니다. 재료와 돈을 바로 떨어뜨려 달리면서 수집하는 쪽으로 바꿨습니다.</span></li>
+                <li><strong>무기를 합성하면 쓴 강화 비용을 돌려줍니다</strong><span>서로 다른 무기 두 개를 합치면 새 무기가 됩니다. 이전 강화가 날아가는 손해가 있으면 새 무기를 시도하지 않게 되어, 실제로 쓴 비용은 돌려주고 새 무기에 다시 투자하게 했습니다.</span></li>
+                <li><strong>시점을 쿼터뷰로 바꿨습니다</strong><span>3인칭 시점에서는 위아래를 보며 운전하고 쏘는 조작이 어수선했습니다. 위에서 내려다보면 운전과 조준이 같은 평면에서 나뉘고, 건물이 무너지고 귀중품이 쏟아지는 장면이 한 화면에 들어옵니다.</span></li>
+              </ul>
+            </section>
+          </div>
+        </details>
+      </div>
+    </div>
+  </article>
 
   <article class="game" id="gasgas">
     <div class="game-head">
