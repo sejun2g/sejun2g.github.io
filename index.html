@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="게임 기획자 오세준의 포트폴리오. 나르미의 나라장터, 건물부수기, CLACKTRACK.">
+<meta name="description" content="게임 기획자 오세준의 포트폴리오. 나르미의 나라장터, 건물부수기, CLACKTRACK, 개발 중인 GasGas.">
+<meta name="robots" content="noindex">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>오세준 게임 기획 포트폴리오</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
@@ -23,6 +24,8 @@
   --narumi-wash: #E4F0EE;
   --bb-wash: #FBEEDD;
   --ct-wash: #E5ECFB;
+  --gas: #5E7230;
+  --gas-wash: #EDF1E2;
   --display: "Black Han Sans", "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
@@ -34,6 +37,7 @@
     --paper: #0F1216; --surface: #171B21; --ink: #E8ECF1; --ink-2: #A7B0BD; --ink-3: #8891A0; --line: #2A313B;
     --narumi: #5CC4B6; --bb: #F0A24A; --ct: #86A8FF;
     --narumi-wash: #14272A; --bb-wash: #2A1F12; --ct-wash: #151F38;
+    --gas: #B3C77A; --gas-wash: #1D2414;
     color-scheme: dark;
   }
 }
@@ -41,6 +45,7 @@
   --paper: #0F1216; --surface: #171B21; --ink: #E8ECF1; --ink-2: #A7B0BD; --ink-3: #8891A0; --line: #2A313B;
   --narumi: #5CC4B6; --bb: #F0A24A; --ct: #86A8FF;
   --narumi-wash: #14272A; --bb-wash: #2A1F12; --ct-wash: #151F38;
+  --gas: #B3C77A; --gas-wash: #1D2414;
   color-scheme: dark;
 }
 
@@ -97,6 +102,13 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
 #narumi { --hue: var(--narumi); --wash: var(--narumi-wash); }
 #building-breaker { --hue: var(--bb); --wash: var(--bb-wash); }
 #clacktrack { --hue: var(--ct); --wash: var(--ct-wash); }
+#gasgas { --hue: var(--gas); --wash: var(--gas-wash); }
+
+/* 개발 중 구분 */
+.wip-head { border-top: 1px solid var(--line); }
+.wip-head .inner { padding-block: 44px 8px; }
+.wip-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.5rem, 3.4vw, 2rem); }
+.wip-head p { color: var(--ink-2); margin-top: 6px; max-width: var(--text); }
 .game, #contact { scroll-margin-top: 56px; }
 
 .game-head { background: var(--wash); }
@@ -193,6 +205,7 @@ details.more[open] > summary::after { content: "−"; }
       <a href="#narumi">나르미의 나라장터</a>
       <a href="#building-breaker">건물부수기</a>
       <a href="#clacktrack">CLACKTRACK</a>
+      <a href="#gasgas">개발 중</a>
       <a href="#contact">연락처</a>
     </nav>
   </div>
@@ -405,6 +418,65 @@ details.more[open] > summary::after { content: "−"; }
                 <div><span class="num">21 ~ 40</span><span class="learn">레버와 회전 레일</span><span class="memo">24번: 스위치가 반복해서 작동한다는 것을 가르친다</span></div>
                 <div><span class="num">41 ~ 45</span><span class="learn">포탈</span><span class="memo">41번: 포탈 배치 연습</span></div>
               </div>
+            </section>
+          </div>
+        </details>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───────────── 개발 중 ───────────── -->
+  <section class="wip-head" aria-labelledby="wip-title">
+    <div class="inner">
+      <h2 id="wip-title">개발 중</h2>
+      <p>아직 완성되지 않은 작업입니다. 화면은 회색 박스와 아트 테스트 단계입니다.</p>
+    </div>
+  </section>
+
+  <article class="game" id="gasgas">
+    <div class="game-head">
+      <div class="inner">
+        <div>
+          <p class="state-tag">개발 중 · 가제</p>
+          <h2>GasGas</h2>
+          <p class="pitch">독가스가 뒤덮은 세계에서, 하늘에 뜬 비행선 거점을 키우며 살아남는 생존 경영 게임입니다. 준비가 되면 지상으로 내려가 사람과 기술을 구해 옵니다. 지금은 갑판 경영에서 첫 인양까지 이어지는 초반 루프를 만든 상태입니다.</p>
+          <div class="actions">
+            <a class="btn solid" href="https://youtu.be/7EC-w5O2N8g" target="_blank" rel="noopener">
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>개발 영상
+            </a>
+          </div>
+        </div>
+        <dl class="facts">
+          <dt>장르</dt><dd>생존 경영 + 지상 RTS 탐사</dd>
+          <dt>플랫폼</dt><dd>PC</dd>
+          <dt>기간</dt><dd>2026.11 ~ 진행 중</dd>
+          <dt>역할</dt><dd>1인 제작. 기획, 시스템 설계, 화면과 연출 방향 결정</dd>
+          <dt>도구</dt><dd>Unity, Claude Code</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="game-body">
+      <div class="inner">
+        <div class="shelf" style="--shot: 400px" role="group" aria-label="GasGas 개발 화면" tabindex="0">
+          <figure><img src="img/gas-deck.webp" width="960" height="540" alt="둥근 비행선 갑판 위에 주민과 시설이 놓인 장면" loading="lazy"><figcaption><b>갑판</b>비행선 위에 시설을 짓고 주민을 배정합니다.</figcaption></figure>
+          <figure><img src="img/gas-store.webp" width="960" height="540" alt="안개 낀 거리의 편의점 안에서 두 생존자가 물건을 찾는 장면" loading="lazy"><figcaption><b>인양</b>지나가는 편의점에 내려가 물자를 챙깁니다.</figcaption></figure>
+          <figure><img src="img/gas-sound.webp" width="960" height="540" alt="두 생존자 주변으로 소리 물결이 퍼지는 장면" loading="lazy"><figcaption><b>소리</b>발소리와 공격 소리가 물결로 보이고, 괴물은 소리를 듣고 다가옵니다.</figcaption></figure>
+        </div>
+
+        <details class="more">
+          <summary>설계 의도 자세히 보기</summary>
+          <div class="more-body">
+            <section class="block">
+              <h3>설계와 이유</h3>
+              <ul class="points">
+                <li><strong>연구만으로는 다음 단계가 열리지 않습니다</strong><span>거점 안에서 연구만 반복해서 끝까지 갈 수 있으면 지상에 내려갈 이유가 없습니다. 일부 시설과 제작법은 지상에서 가져온 청사진과 재료, 사람이 있어야 열립니다.</span></li>
+                <li><strong>인양 지점은 곧 지나갑니다</strong><span>비행선은 표류하고, 아래로 지나가는 건물에는 남은 시간이 표시됩니다. 멈추려면 연료를 써야 하고, 멈추지 않으면 방호복 시간과 지나가는 시간이 함께 줄어듭니다. "더 털까, 올라갈까"를 시스템이 만들게 했습니다.</span></li>
+                <li><strong>안개 속 적은 소리로 먼저 압니다</strong><span>지상은 시야가 짧고, 소리가 나면 그 반경이 화면에 물결로 보입니다. 총은 강하지만 시끄럽고 근접 무기와 활은 약하지만 조용해서, 무기 선택이 곧 위험 선택이 됩니다.</span></li>
+                <li><strong>경영은 분야 단위로 자동화합니다</strong><span>자원 종류는 많아도 사람을 농사나 요리에 배정하면 그 분야 일은 알아서 돌아갑니다. 반복적인 세부 관리가 플레이의 대부분이 되지 않게 했습니다.</span></li>
+                <li><strong>시설은 강제 조건이 아니라 중간 재료로 이어집니다</strong><span>목재에서 숯이, 숯을 쓰고 남은 재에서 비료와 화약 원료가 나옵니다. 특정 시설이 있어야 짓게 막는 대신, 재료가 자연스럽게 다음 시설로 이끌게 했습니다.</span></li>
+                <li><strong>선악 점수를 두지 않습니다</strong><span>사람은 평면적이지 않아서, 나쁜 선택을 하다가도 중요한 순간엔 다르게 고를 수 있습니다. 엔딩은 누적 수치가 아니라 분기 지점에서 그때 고른 선택으로 갈립니다.</span></li>
+              </ul>
             </section>
           </div>
         </details>
